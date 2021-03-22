@@ -1,13 +1,15 @@
+#Library for issue and Return of Books and so on
+
 class Library:
-    def __init__(self, listOfBooks):
+    def __init__(self, listOfBooks):  #List of books Function
         self.books = listOfBooks
 
-    def displayAvailableBooks(self):
+    def displayAvailableBooks(self): # To DIsplay the books
         print("Books present in this library are: ")
         for book in self.books: 
             print(" *" + book)
     
-    def borrowBook(self, bookName):
+    def borrowBook(self, bookName):  #function to borrow books
         if bookName in self.books:
             print(f"You have been issued {bookName}. Please keep it safe and return it within 30 days")
             self.books.remove(bookName)
@@ -16,7 +18,7 @@ class Library:
             print("Sorry, This book is either not available or has already been issued to someone else. Please wait until the book is available")
             return False
 
-    def returnBook(self, bookName):
+    def returnBook(self, bookName):  #Return Books
         self.books.append(bookName)
         print("Thanks for returning this book! Hope you enjoyed reading it. Have a great day ahead!")
 
@@ -34,7 +36,7 @@ if __name__ == "__main__":
     centraLibrary = Library(["Algorithms", "Django", "Clrs", "Python Notes","C++With Akshay"."Rohan pagal"])
     student = Student()
    
-    while(True):
+    while(True):   # Switch cases 
         welcomeMsg = '''\n ====== Welcome to Central Library ======
         Please choose an option:
         1. List all the books
